@@ -29,15 +29,9 @@ Layout = null;
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    @* <style>
-        #dv_nav_container{
-            padding-right: 0px !important;
-            padding-left: 0px !important;
-            margin-right: 0px !important;
-            margin-left: 0px !important;
-            max-width: 100% !important;
-        }
-    </style> *@
+    <style>
+        
+    </style>
 </head>
 <body>
     <header>
@@ -56,111 +50,133 @@ Layout = null;
             </div>
         </nav>
     </header>
-    <div class="wrap">
+    @* <div class="wrap"> *@
         @* <p>
             <a asp-page="Create">Create New</a>
         </p> *@
-        <div class="menu">
-            <div class="mini-menu">
-                <ul>
-                    <li class="sub">
-                        <a href="#">WOMAN</a>
-                        <ul>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Blazers</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Trousers</a></li>
-                            <li><a href="#">Jenas</a></li>
-                            <li><a href="#">Shirts</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub">
-                        <a href="#">MAN</a>
-                        <ul>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Blazers</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Trousers</a></li>
-                            <li><a href="#">Jenas</a></li>
-                            <li><a href="#">Shirts</a></li> 
-                        </ul>
-                    </li>
-                    <li class="sub">
-                        <a href="#">KIDS</a>
-                        <ul>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Blazers</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Trousers</a></li>
-                            <li><a href="#">Jenas</a></li>
-                            <li><a href="#">Shirts</a></li> 
-                        </ul>
-                    </li>
-                    <li class="sub">
-                        <a href="#">Shoes&Bags</a>
-                        <ul>
-                            <li><a href="#">Jackets</a></li>
-                            <li><a href="#">Blazers</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Trousers</a></li>
-                            <li><a href="#">Jenas</a></li>
-                            <li><a href="#">Shirts</a></li> 
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu-colors menu-item">
-                <div class="header-item" >Colors</div>
-                <ul class="color-row1">
-                    <li class="color-circle" style="background:#4286f4"></li>
-                    <li class="color-circle" style="background:#2acc4b"></li>
-                    <li class="color-circle" style="background:#343534"></li>
-                    <li class="color-circle" style="background:#5f605f"></li>
-                    <li class="color-circle" style="background:#929392"></li>
-                </ul>
-                <ul class="color-row2">
-                    <li class="color-circle" style="background:#9e8045"></li>
-                    <li class="color-circle" style="background:#d3d3d3"></li>
-                    <li class="color-circle" style="background:#6b6666"></li>
-                    <li class="color-circle" style="background:#999797"></li>
-                    <li class="color-circle" style="background:#923476"></li>
-                </ul>
-            </div>
-            <div class="menu-size menu-item">
-                <div class="header-item" >Size</div>
-                <ul class="color-row1">
-                    <li class="color-circle size-circle" ><p class="sizedouble">XS</p></li>
-                    <li class="color-circle size-circle" style="background-color:#343534" ><p style="color:#999" class="size">S</p></li>
-                    <li class="color-circle size-circle" ><p class="size">M</p></li>
-                    <li class="color-circle size-circle" ><p class="size">L</p></li>
-                    <li class="color-circle size-circle" ><p class="sizedouble">XL</p></li>
-                </ul>
-            </div>
-            <div class="menu-price menu-item">
-                <div class="header-item" >Price</div>
-                <p>
-                    <!--<label for="amount">Price range:</label>-->
-                    <input type="text" readonly id="amount"  style="border:0; color:#f6931f; font-weight:bold;">
-                </p>
-                <div id="slider-range"></div>
-            </div>        
-        </div>
-
-        <div class="items">
-            @foreach (var item in Model.Product)
-                {
-                    <div data-price="@item.price" class="item">
-                        <span class="product_id">@item.product_id</span>
-                        <span class="product_price">KSH&nbsp;@item.price</span>
-                        <img style="max-width: 25%;"  src="~/images/@item.image_path" alt="@item.image_path">
-                        @* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSS8oEITt9vJtsCPRH0mvi2pRf8YZfN6YnkASdjsibLyayVVlidSUwG64QIWw" alt="jacket" class="img-item"></img> *@
-                        <div class="info">
-                            <span>@item.item_name</span>                            
+    <div class="pts-inner ps-container page-width">
+        <div class="row-inner row-level-1 container">
+            <div class="row clearfix">
+                <div class="col-xl-3 col-lg-3 col-sm-3 col-xs-12" style="width: auto; float: left;">
+                    <div class="menu">
+                        <div class="mini-menu">
+                            <ul>
+                                <li class="sub">
+                                    <a href="#">WOMAN</a>
+                                    <ul>
+                                        <li><a href="#">Jackets</a></li>
+                                        <li><a href="#">Blazers</a></li>
+                                        <li><a href="#">Suits</a></li>
+                                        <li><a href="#">Trousers</a></li>
+                                        <li><a href="#">Jenas</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sub">
+                                    <a href="#">MAN</a>
+                                    <ul>
+                                        <li><a href="#">Jackets</a></li>
+                                        <li><a href="#">Blazers</a></li>
+                                        <li><a href="#">Suits</a></li>
+                                        <li><a href="#">Trousers</a></li>
+                                        <li><a href="#">Jenas</a></li>
+                                        <li><a href="#">Shirts</a></li> 
+                                    </ul>
+                                </li>
+                                <li class="sub">
+                                    <a href="#">KIDS</a>
+                                    <ul>
+                                        <li><a href="#">Jackets</a></li>
+                                        <li><a href="#">Blazers</a></li>
+                                        <li><a href="#">Suits</a></li>
+                                        <li><a href="#">Trousers</a></li>
+                                        <li><a href="#">Jenas</a></li>
+                                        <li><a href="#">Shirts</a></li> 
+                                    </ul>
+                                </li>
+                                <li class="sub">
+                                    <a href="#">Shoes&Bags</a>
+                                    <ul>
+                                        <li><a href="#">Jackets</a></li>
+                                        <li><a href="#">Blazers</a></li>
+                                        <li><a href="#">Suits</a></li>
+                                        <li><a href="#">Trousers</a></li>
+                                        <li><a href="#">Jenas</a></li>
+                                        <li><a href="#">Shirts</a></li> 
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                    </div>                    
-            }            
+                        <div class="menu-colors menu-item">
+                            <div class="header-item" >Colors</div>
+                            <ul class="color-row1">
+                                <li class="color-circle" style="background:#4286f4"></li>
+                                <li class="color-circle" style="background:#2acc4b"></li>
+                                <li class="color-circle" style="background:#343534"></li>
+                                <li class="color-circle" style="background:#5f605f"></li>
+                                <li class="color-circle" style="background:#929392"></li>
+                            </ul>
+                            <ul class="color-row2">
+                                <li class="color-circle" style="background:#9e8045"></li>
+                                <li class="color-circle" style="background:#d3d3d3"></li>
+                                <li class="color-circle" style="background:#6b6666"></li>
+                                <li class="color-circle" style="background:#999797"></li>
+                                <li class="color-circle" style="background:#923476"></li>
+                            </ul>
+                        </div>
+                        <div class="menu-size menu-item">
+                            <div class="header-item" >Size</div>
+                            <ul class="color-row1">
+                                <li class="color-circle size-circle" ><p class="sizedouble">XS</p></li>
+                                <li class="color-circle size-circle" style="background-color:#343534" ><p style="color:#999" class="size">S</p></li>
+                                <li class="color-circle size-circle" ><p class="size">M</p></li>
+                                <li class="color-circle size-circle" ><p class="size">L</p></li>
+                                <li class="color-circle size-circle" ><p class="sizedouble">XL</p></li>
+                            </ul>
+                        </div>
+                        <div class="menu-price menu-item">
+                            <div class="header-item" >Price</div>
+                            <p>
+                                <!--<label for="amount">Price range:</label>-->
+                                <input type="text" readonly id="amount"  style="border:0; color:#f6931f; font-weight:bold;">
+                            </p>
+                            <div id="slider-range"></div>
+                        </div>        
+                    </div>
+                </div>
+
+                <div class="col-xl-9 col-lg-9 col-sm-9 col-xs-12" style="">
+                        <div class="items">
+                        @foreach (var item in Model.Product)
+                            {
+                                <a style="cursor: pointer;">
+                                    <div data-price="@item.price" class="item">
+                                        <span class="product_id">@item.product_id</span>
+                                        <span class="product_price">KSH&nbsp;@item.price</span>
+                                        <img style="max-width: 50%; left: 35%; margin-bottom: 5px; margin-top: 3px !important"  src="~/images/@item.image_path" alt="@item.image_path">
+                                        @* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSS8oEITt9vJtsCPRH0mvi2pRf8YZfN6YnkASdjsibLyayVVlidSUwG64QIWw" alt="jacket" class="img-item"></img> *@
+                                        <div class="info" style="margin-bottom: 9%">
+                                            <span style="color: #000; font-weight: 600">@item.item_name</span>
+                                            <br>
+                                            <div style="padding-right: 10px; padding-left: 10px">
+                                                <span style="color: red;font-weight: 100;float: left;">My Stock Level <span style="background-color: red; color: #ffffff; border-radius: 50%; padding-right: 5px">&nbsp;0</span></span>                            
+                                                <span style="color: blue;font-weight: 100;float: right;">Re Order Level<span style="background-color: blue; color: #ffffff; border-radius: 50%; padding-right: 5px">&nbsp;0</span></span>
+                                            </div>                                                            
+                                        </div>
+                                        <div style="display: none;" class="checkout">
+                                            <input class="form-control" style="width: 35%; float: left; margin-left: 5%; border: 1px solid red" type="number">
+                                            <button class="form-control" style="color: white; float: right; margin-right: 5%; width:40%; border: 1px solid red; border-radius: 0px; background: red">ADD TO CART</button>
+                                        </div>
+                                    </div>  
+                                </a>
+                            }            
+                        </div>
+                </div>            
+            </div>
         </div>
     </div>
+        
+    @* </div> *@
         <table class="table">
             <thead>
                 <tr>

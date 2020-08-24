@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RazorPagesProduct.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace E_commerce
 {
@@ -39,6 +40,7 @@ namespace E_commerce
                     Configuration.GetConnectionString("ProductContext")));
             }
             services.AddRazorPages();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
