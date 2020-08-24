@@ -147,20 +147,18 @@ Layout = null;
         </div>
 
         <div class="items">
-            <div class="items">
-                @foreach (var item in Model.Product)
+            @foreach (var item in Model.Product)
                 {
                     <div data-price="@item.price" class="item">
+                        <span class="product_id">@item.product_id</span>
+                        <span class="product_price">KSH&nbsp;@item.price</span>
                         <img style="max-width: 25%;"  src="~/images/@item.image_path" alt="@item.image_path">
                         @* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSS8oEITt9vJtsCPRH0mvi2pRf8YZfN6YnkASdjsibLyayVVlidSUwG64QIWw" alt="jacket" class="img-item"></img> *@
                         <div class="info">
-                            <h3>@item.item_name</h3>
-                            <p class="descroption">@item.product_id</p>
-                            <h5>KSH&nbsp;@item.price</h5>
+                            <span>@item.item_name</span>                            
                         </div>
                     </div>                    
-                }
-            </div>
+            }            
         </div>
     </div>
         <table class="table">
