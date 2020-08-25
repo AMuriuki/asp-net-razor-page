@@ -12,232 +12,349 @@ Layout = null;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="ASP.NET Core 3.1 Razor Page Demo" />
+    <meta name="description" content="Web page built using ASP.NET Core 3.1 Razor Pages to display over 9000 products from SQLite DB" />
+    <meta name="author" content="https://arnoldnderitu.io" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@ViewData["Title"] - E_commerce</title>
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" /> *@
-    <link rel="stylesheet" href="~/css/custom.css">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- inject css start -->
+    <link href="~/css/theme-plugin.css" rel="stylesheet" />
+    <link href="~/css/theme.min.css" rel="stylesheet" />
+    <link href="~/css/_custom.css" rel="stylesheet" />
+    <!-- inject css end -->
 
     <style>
-        
-    </style>
+        .bg-light{
+            padding: 0em !important;
+            background-color: #ffff !important;
+        }
+
+        .p-0{
+            float: left !important;
+        }
+
+        section{
+            padding: .5rem 0 !important;
+        }
+
+        .page-wrapper{
+            margin-top: 1% !important;
+        }        
+    </style>    
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div id="dv_nav_container" class="container">
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    <!-- page wrapper start -->
+    <div class="page-wrapper">
+        <!--hero section start-->
+        <section class="bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                <div class="col-md-6 mt-3 mt-md-0">
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-md-end bg-transparent p-0 m-0">
+                        <li class="breadcrumb-item">
+                            <a class="text-dark" href="/index">
+                                Home
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/products">Products</a>
-                        </li>
-                    </ul>
+                        <li class="breadcrumb-item">
+                            <a class="text-dark" href="/products">
+                                Oils
+                            </a>
+                        </li>                        
+                    </ol>
+                    </nav>
                 </div>
+                </div>
+                <!-- / .row -->
             </div>
-        </nav>
-    </header>
-    @* <div class="wrap"> *@
-        @* <p>
-            <a asp-page="Create">Create New</a>
-        </p> *@
-    <div class="pts-inner ps-container page-width">
-        <div class="row-inner row-level-1 container">
-            <div class="row clearfix">
-                <div class="col-xl-3 col-lg-3 col-sm-3 col-xs-12" style="width: auto; float: left;">
-                    <div class="menu">
-                        <div class="mini-menu">
-                            <ul>
-                                <li class="sub">
-                                    <a href="#">WOMAN</a>
-                                    <ul>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Blazers</a></li>
-                                        <li><a href="#">Suits</a></li>
-                                        <li><a href="#">Trousers</a></li>
-                                        <li><a href="#">Jenas</a></li>
-                                        <li><a href="#">Shirts</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sub">
-                                    <a href="#">MAN</a>
-                                    <ul>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Blazers</a></li>
-                                        <li><a href="#">Suits</a></li>
-                                        <li><a href="#">Trousers</a></li>
-                                        <li><a href="#">Jenas</a></li>
-                                        <li><a href="#">Shirts</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="sub">
-                                    <a href="#">KIDS</a>
-                                    <ul>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Blazers</a></li>
-                                        <li><a href="#">Suits</a></li>
-                                        <li><a href="#">Trousers</a></li>
-                                        <li><a href="#">Jenas</a></li>
-                                        <li><a href="#">Shirts</a></li> 
-                                    </ul>
-                                </li>
-                                <li class="sub">
-                                    <a href="#">Shoes&Bags</a>
-                                    <ul>
-                                        <li><a href="#">Jackets</a></li>
-                                        <li><a href="#">Blazers</a></li>
-                                        <li><a href="#">Suits</a></li>
-                                        <li><a href="#">Trousers</a></li>
-                                        <li><a href="#">Jenas</a></li>
-                                        <li><a href="#">Shirts</a></li> 
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="menu-colors menu-item">
-                            <div class="header-item" >Colors</div>
-                            <ul class="color-row1">
-                                <li class="color-circle" style="background:#4286f4"></li>
-                                <li class="color-circle" style="background:#2acc4b"></li>
-                                <li class="color-circle" style="background:#343534"></li>
-                                <li class="color-circle" style="background:#5f605f"></li>
-                                <li class="color-circle" style="background:#929392"></li>
-                            </ul>
-                            <ul class="color-row2">
-                                <li class="color-circle" style="background:#9e8045"></li>
-                                <li class="color-circle" style="background:#d3d3d3"></li>
-                                <li class="color-circle" style="background:#6b6666"></li>
-                                <li class="color-circle" style="background:#999797"></li>
-                                <li class="color-circle" style="background:#923476"></li>
-                            </ul>
-                        </div>
-                        <div class="menu-size menu-item">
-                            <div class="header-item" >Size</div>
-                            <ul class="color-row1">
-                                <li class="color-circle size-circle" ><p class="sizedouble">XS</p></li>
-                                <li class="color-circle size-circle" style="background-color:#343534" ><p style="color:#999" class="size">S</p></li>
-                                <li class="color-circle size-circle" ><p class="size">M</p></li>
-                                <li class="color-circle size-circle" ><p class="size">L</p></li>
-                                <li class="color-circle size-circle" ><p class="sizedouble">XL</p></li>
-                            </ul>
-                        </div>
-                        <div class="menu-price menu-item">
-                            <div class="header-item" >Price</div>
-                            <p>
-                                <!--<label for="amount">Price range:</label>-->
-                                <input type="text" readonly id="amount"  style="border:0; color:#f6931f; font-weight:bold;">
-                            </p>
-                            <div id="slider-range"></div>
-                        </div>        
-                    </div>
-                </div>
+            <!-- / .container -->
+        </section>
+        <!--hero section end-->
 
-                <div class="col-xl-9 col-lg-9 col-sm-9 col-xs-12" style="">
-                        <div class="items">
-                        @foreach (var item in Model.Product)
-                            {
-                                <a style="cursor: pointer;">
-                                    <div data-price="@item.price" class="item">
-                                        <span class="product_id">@item.product_id</span>
-                                        <span class="product_price">KSH&nbsp;@item.price</span>
-                                        <img style="max-width: 50%; left: 35%; margin-bottom: 5px; margin-top: 3px !important"  src="~/images/@item.image_path" alt="@item.image_path">
-                                        @* <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSS8oEITt9vJtsCPRH0mvi2pRf8YZfN6YnkASdjsibLyayVVlidSUwG64QIWw" alt="jacket" class="img-item"></img> *@
-                                        <div class="info" style="margin-bottom: 9%">
-                                            <span style="color: #000; font-weight: 600">@item.item_name</span>
-                                            <br>
-                                            <div style="padding-right: 10px; padding-left: 10px">
-                                                <span style="color: red;font-weight: 100;float: left;">My Stock Level <span style="background-color: red; color: #ffffff; border-radius: 50%; padding-right: 5px">&nbsp;0</span></span>                            
-                                                <span style="color: blue;font-weight: 100;float: right;">Re Order Level<span style="background-color: blue; color: #ffffff; border-radius: 50%; padding-right: 5px">&nbsp;0</span></span>
-                                            </div>                                                            
-                                        </div>
-                                        <div style="display: none;" class="checkout">
-                                            <input class="form-control" style="width: 35%; float: left; margin-left: 5%; border: 1px solid red" type="number">
-                                            <button class="form-control" style="color: white; float: right; margin-right: 5%; width:40%; border: 1px solid red; border-radius: 0px; background: red">ADD TO CART</button>
-                                        </div>
-                                    </div>  
-                                </a>
-                            }            
+        <!--body content start-->
+        <div class="page-content">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-12 order-lg-1">
+                            <div class="row mb-4 align-items-center" style="border: 1px solid #D8D8D8; margin-right: 0px; margin-left: 0px;">
+                                <div class="col-md-5 mb-3 mb-md-0">
+                                    <span class="text-muted">Showing 23 results</span>
+                                </div>
+                                <div class="col-md-7 d-flex align-items-center justify-content-md-end">
+                                    <div class="col" style="text-align: right;">
+                                            <span>Sort By</span>                                            
+                                    </div>
+                                    <div class="sort-filter ml-2 d-flex align-items-center">
+                                        <select class="custom-select" id="inputGroupSelect02">
+                                            <option selected>Select Sorting -</option>
+                                            <option value="1">Newest Item</option>
+                                            <option value="2">Populer</option>
+                                            <option value="3">Best Match</option>
+                                        </select>
+                                    </div>
+                                    <div class="view-filter">
+                                        <a class="active" href="shop-grid-left-sidebar.html">
+                                            <i class="lab la-buromobelexperte"></i>
+                                        </a>
+                                        <a href="shop-list-left-sidebar.html">
+                                            <i class="las la-list"></i>
+                                        </a>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                @foreach (var item in Model.Product)
+                                {
+                                    <div class="col-lg-4 col-md-6" style="margin-bottom: 1.5rem !important">
+                                        <a class="" style="cursor: pointer">
+                                            <div class="card">
+                                                <div id="textbox">
+                                                    <p class="alignleft">@item.product_id</p>
+                                                    <p class="alignright">KSH&nbsp;<span>@item.price</span></p>
+                                                </div>
+                                                <img class="card-img-top card-img-back" src="~/images/@item.image_path" alt="@item.image_path">
+                                                <div class="center">
+                                                    <p>@item.item_name</p>
+                                                </div>
+                                                <div>
+                                                    <span style="color: red;font-weight: 100;float: left; padding-left: 20px">My Stock Level <span style="background-color: red; color: #ffffff; border-radius: 50%; padding-right: 5px;">&nbsp;0</span></span>                            
+                                                    <span style="color: blue;font-weight: 100;float: right; padding-right: 20px">Re Order Level<span style="background-color: blue; color: #ffffff; border-radius: 50%; padding-right: 5px">&nbsp;0</span></span>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-0">
+                                                    <div class="_footer" style="display: none">
+                                                        <input class="form-control" style="width: 35%; float: left;" type="number"/>
+                                                        <button class="btn-cart btn btn-primary" style="width: 50%; float: right;" type="button">
+                                                            ADD TO CART
+                                                        </button>                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    }                                
+                            </div>
+                            <nav aria-label="Page navigation" class="mt-8">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-                </div>            
-            </div>
+                        <div class="col-lg-3 col-md-12 sidebar mt-8 mt-lg-0">
+                            <div class="shadow-sm p-5" style="border: 1px solid #D8D8D8">
+                                <div class="widget widget-categories mb-4 pb-4 border-bottom" style="border-bottom: 0px solid #dee2e6!important">
+                                    <h4 class="widget-title mb-3" style="border-bottom: 1px solid #dee2e6;">SHOP BY CATEGORIES</h4>
+                                        <div id="accordion" class="accordion">
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">FATS</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse1" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Sweaters</a>
+                                                            </li>
+                                                            <li><a href="#">Jackets</a>
+                                                            </li>
+                                                            <li><a href="#">Sweatshirts</a>
+                                                            </li>
+                                                            <li><a href="#">Coat &amp; Blazers</a>
+                                                            </li>
+                                                            <li><a href="#">Shrugs</a>
+                                                            </li>
+                                                            <li><a href="#">Thermals</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true">OILS</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse2" class="collapse show" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true">GLYCERIN</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse3" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true">TOILET SOAP</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse4" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true">BAR SOAP</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse5" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>                                          
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true">MARGARINE</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse6" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true">LAUNDRY TABS</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse7" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="border-0 mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-0">
+                                                        <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="true">HOTEL SOAP</a>
+                                                    </h6>
+                                                </div>
+                                                <div id="collapse8" class="collapse" data-parent="#accordion">
+                                                    <div class="card-body text-muted">
+                                                        <ul class="list-unstyled">
+                                                            <li><a href="#">Fresh Fri</a>
+                                                            </li>
+                                                            <li><a href="#">Popco</a>
+                                                            </li>
+                                                            <li><a href="#">Salit</a>
+                                                            </li>
+                                                            <li><a href="#">Fresh Zait</a>
+                                                            </li>
+                                                            <li><a href="#">Sunfresh</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            <!--body content end-->
         </div>
-    </div>
-        
-    @* </div> *@
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].product_id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].local_id)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].price)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].product_no)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].item_name)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].category)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Product[0].sub_category)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Product) {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.product_id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.local_id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.price)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.product_no)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.item_name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.category)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.sub_category)
-                            </td>
-                            <td>
-                                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                            </td>
-                        </tr>
-                    }
-            </tbody>
-        </table>
-    
+
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -245,6 +362,7 @@ Layout = null;
         </div>
     </footer>
 
+    <!-- inject js end -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
