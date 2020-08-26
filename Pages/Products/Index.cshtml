@@ -23,7 +23,7 @@ Layout = null;
     <!-- inject css start -->
     <link href="~/css/theme-plugin.css" rel="stylesheet" />
     <link href="~/css/theme.min.css" rel="stylesheet" />
-    <link href="~/css/_custom.css" rel="stylesheet" />
+    <link href="~/css/_custom.css" rel="stylesheet" />    
     <!-- inject css end -->
 
     <style>
@@ -56,12 +56,12 @@ Layout = null;
                     <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-md-end bg-transparent p-0 m-0">
                         <li class="breadcrumb-item">
-                            <a class="text-dark" href="/index">
+                            <a class="text-dark" style="color: #f08080 !important" href="/index">
                                 Home
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a class="text-dark" href="/products">
+                            <a class="text-dark" style="color: #f08080 !important" href="/products">
                                 Oils
                             </a>
                         </li>                        
@@ -80,24 +80,24 @@ Layout = null;
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-9 col-md-12 order-lg-1">
+                        <div class="col-lg-9 col-md-12 order-lg-1" style="margin-top: 1%;">
                             <div class="row mb-4 align-items-center" style="border: 1px solid #D8D8D8; margin-right: 0px; margin-left: 0px;">
                                 <div class="col-md-5 mb-3 mb-md-0">
-                                    <span class="text-muted">Showing 23 results</span>
+                                    <span class="text-muted" style="color: #f08080 !important">Showing 23 results</span>
                                 </div>
                                 <div class="col-md-7 d-flex align-items-center justify-content-md-end">
                                     <div class="col" style="text-align: right;">
-                                            <span>Sort By</span>                                            
+                                            <span style="color: #f08080 !important">Sort By</span>                                            
                                     </div>
                                     <div class="sort-filter ml-2 d-flex align-items-center">
                                         <select class="custom-select" id="inputGroupSelect02">
-                                            <option selected>Select Sorting -</option>
+                                            <option selected>Select Sorting</option>
                                             <option value="1">Newest Item</option>
                                             <option value="2">Populer</option>
                                             <option value="3">Best Match</option>
                                         </select>
                                     </div>
-                                    <div class="view-filter">
+                                    <div class="view-filter" style="margin-left: 5%">
                                         <a class="active" href="shop-grid-left-sidebar.html">
                                             <i class="lab la-buromobelexperte"></i>
                                         </a>
@@ -114,8 +114,8 @@ Layout = null;
                                         <a class="" style="cursor: pointer">
                                             <div class="card">
                                                 <div id="textbox">
-                                                    <p class="alignleft">@item.product_id</p>
-                                                    <p class="alignright">KSH&nbsp;<span>@item.price</span></p>
+                                                    <p class="alignleft"><span>@item.product_id</span></p>
+                                                    <p class="alignright"><span>KSH&nbsp;@item.price</span></p>
                                                 </div>
                                                 <img class="card-img-top card-img-back" src="~/images/@item.image_path" alt="@item.image_path">
                                                 <div class="center">
@@ -166,12 +166,13 @@ Layout = null;
                         <div class="col-lg-3 col-md-12 sidebar mt-8 mt-lg-0">
                             <div class="shadow-sm p-5" style="border: 1px solid #D8D8D8">
                                 <div class="widget widget-categories mb-4 pb-4 border-bottom" style="border-bottom: 0px solid #dee2e6!important">
-                                    <h4 class="widget-title mb-3" style="border-bottom: 1px solid #dee2e6;">SHOP BY CATEGORIES</h4>
-                                        <div id="accordion" class="accordion">
+                                    <h4 class="widget-title mb-3" style="border-bottom: 1px solid #dee2e6; color: #b22222; font-weight: 800">SHOP BY CATEGORIES</h4>
+                                        <div id="accordion" class="accordion" style="margin-top: 15%">
                                             <div class="border-0 mb-3">
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">FATS</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse1" class="collapse" data-parent="#accordion">
@@ -197,6 +198,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true">OILS</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse2" class="collapse show" data-parent="#accordion">
@@ -220,6 +222,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true">GLYCERIN</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse3" class="collapse" data-parent="#accordion">
@@ -243,6 +246,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true">TOILET SOAP</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse4" class="collapse" data-parent="#accordion">
@@ -266,6 +270,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true">BAR SOAP</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse5" class="collapse" data-parent="#accordion">
@@ -289,6 +294,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true">MARGARINE</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse6" class="collapse" data-parent="#accordion">
@@ -312,6 +318,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="true">LAUNDRY TABS</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse7" class="collapse" data-parent="#accordion">
@@ -335,6 +342,7 @@ Layout = null;
                                                 <div class="card-header">
                                                     <h6 class="mb-0">
                                                         <a class="link-title" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="true">HOTEL SOAP</a>
+                                                        <hr style="margin-top: 0rem; margin-bottom: 0rem">
                                                     </h6>
                                                 </div>
                                                 <div id="collapse8" class="collapse" data-parent="#accordion">
@@ -357,6 +365,41 @@ Layout = null;
                                         </div>
                                     </h4>
                                 </div>
+
+                                <div class="widget widget-categories mb-4 pb-4 border-bottom" style="border-bottom: 0px solid #dee2e6!important">
+                                    <h4 class="widget-title mb-3" style="border-bottom: 1px solid #dee2e6; color: #b22222; font-weight: 800">PRICE</h4>
+                                    <div slider id="slider-distance">
+                                        <div>
+                                            <div inverse-left style="width:70%;"></div>
+                                            <div inverse-right style="width:70%;"></div>
+                                            <div range style="left:30%;right:40%;"></div>
+                                            <span thumb style="left:30%;"></span>
+                                            <span thumb style="left:60%;"></span>
+                                            <div sign style="left:30%;">
+                                                <span id="value">30</span>
+                                            </div>
+                                            <div sign style="left:60%;">
+                                                <span id="value">60</span>
+                                            </div>
+                                        </div>
+                                        <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                                        this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                                        var children = this.parentNode.childNodes[1].childNodes;
+                                        children[1].style.width=value+'%';
+                                        children[5].style.left=value+'%';
+                                        children[7].style.left=value+'%';children[11].style.left=value+'%';
+                                        children[11].childNodes[1].innerHTML=this.value;" />
+                                        <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                                        this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                                        var children = this.parentNode.childNodes[1].childNodes;
+                                        children[3].style.width=(100-value)+'%';
+                                        children[5].style.right=(100-value)+'%';
+                                        children[9].style.left=value+'%';children[13].style.left=value+'%';
+                                        children[13].childNodes[1].innerHTML=this.value;" />
+                                        </div>
+                                </div>                                
                             </div>
                         </div>
                     </section>
@@ -376,6 +419,15 @@ Layout = null;
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
 
     @* @RenderSection("Scripts", required: false) *@
 </body>
