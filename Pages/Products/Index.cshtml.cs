@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesProduct.Data;
 using RazorPagesProduct.Models;
+using RazorPagesProduct.Pagination;
 
 namespace E_commerce.Pages.Products
 {
@@ -19,11 +20,30 @@ namespace E_commerce.Pages.Products
             _context = context;
         }
 
-        public IList<Product> Product { get;set; }
+        public PaginatedList<Product> Products { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder,
+            string currentFilter, string searchString, int? pageIndex)
         {
-            Product = await _context.Product.Take(23).ToListAsync();
+            if (searchString != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            int pageSize = 23;
+            Products = await PaginatedList<Product>.CreateAsync(
+                _context.Product.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
+
+        // public IList<Product> Product { get; set; }
+
+        // public async Task OnGetAsync()
+        // {
+        //     Product = await _context.Product.Take(23).ToListAsync();
+        // }
     }
 }
